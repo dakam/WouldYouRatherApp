@@ -1,6 +1,6 @@
 # WouldyouRather Web Application
 
-Wouldyourather is a web application developed in React that enables a Player to Select Option One or Option Two. The applications was build as a nano degree project
+WouldYouRatherApp is a web application developed in React that enables a Player to Select Option One or Option Two. The applications was build as a nano degree project
 
 ## Features
 
