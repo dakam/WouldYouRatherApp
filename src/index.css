@@ -1,0 +1,103 @@
+.main-container {
+  margin-top: 3px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.tabcol-unanswered {
+  margin-top: 25px;
+  width: 100%;
+  background: #ffff00;
+  display: inline-flex;
+  color: #000;
+  font-size: 20px;
+}
+
+.tabcol-answered {
+  margin-top: 25px;
+  width: 100%;
+  background: #00ff00;
+  display: inline-flex;
+  color: #000;
+  font-size: 20px;
+}
+
+div.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.avatar {
+  height: 35px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.qdetails {
+  margin-top: 25px;
+  width: 100%;
+  background: #000;
+  height: 40px;
+  display: inline-flex;
+  color: #e8f1e8;
+  font-size: 20px;
+}
+
+.qdetails-one {
+  height: 100%;
+  background: #279f00;
+  text-align: center;
+}
+
+.qdetails-two {
+  height: 100%;
+  background: #735f5f;
+  text-align: center;
+}
+
+.lb-item-middle > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lb-item-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lb-item-middle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.lb-item-content > *:not(:last-child) {
+  border-right: 1px solid #ccc;
+  margin-right: 1rem;
+}
+
+.lb-item-content > *:last-child {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lb-item-content > * {
+  padding: 0 1rem;
+}
+
+.total {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.optionSelected {
+  font-weight: bold;
+  color: #008000;
+}
