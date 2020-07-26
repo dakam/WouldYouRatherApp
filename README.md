@@ -11,7 +11,7 @@ WouldYouRatherApp is a web application developed in React that enables a Player 
 
 ### Installing
 
-To have the development environment of wouldyourather Web Application up and running, follow the below steps
+To have the development environment of WouldYouRatherApp Web Application up and running, follow the below steps
 
 Clone or download the project
 
