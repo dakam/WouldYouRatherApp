@@ -52,4 +52,4 @@ npm start
 ## Acknowledgments
 
 - Udacity for providing the Fake Database
-- Inspired by facebook's use react
+- Inspired by facebook's usecase of React
