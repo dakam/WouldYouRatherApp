@@ -55,7 +55,7 @@ class DashBoard extends Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             {unansweredQuestions.map((qid) => (
-              <div>
+              <div key={qid}>
                 <Row>
                   <Col className="tabcol-unanswered" key={qid} sm="8" md="6">
                     <Question id={qid} />
@@ -69,7 +69,7 @@ class DashBoard extends Component {
           </TabPane>
           <TabPane tabId="2">
             {answeredQuestions.map((qid) => (
-              <Row>
+              <Row key={qid}>
                 <Col className="tabcol-answered" key={qid} sm="6" md="4">
                   <Question id={qid} />
                 </Col>

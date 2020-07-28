@@ -10,6 +10,7 @@ import NewQuestionView from "./NewQuestionView";
 import QuestionDetailsView from "./QuestionDetailsView";
 import Expired from "./Expired";
 import Logout from "./Logout.js";
+import PrivateRoute from "./PrivateRoute";
 import { Switch, Route } from "react-router-dom";
 
 class App extends Component {
@@ -26,27 +27,41 @@ class App extends Component {
           <div className="main-container">
             <NavBar />
             <div className="container">
-              <Switch>
-                {didsignin ? (
-                  <Route path="/" exact component={Login} />
-                ) : (
-                  <Fragment>
-                    <Route path="/" exact component={Dashboard} />
-                    <Route
-                      path="/leaderboardview"
+              {
+                <Fragment>
+                  <Switch>
+                    <PrivateRoute
+                      path="/"
+                      exact
+                      component={Dashboard}
+                      authedUser={didsignin}
+                    />
+
+                    <PrivateRoute
+                      path="/leaderboard"
                       exact
                       component={LeaderBoardView}
+                      authedUser={didsignin}
                     />
-                    <Route path="/add" component={NewQuestionView} />
-                    <Route
+                    <PrivateRoute
+                      path="/add"
+                      exact
+                      component={NewQuestionView}
+                      authedUser={didsignin}
+                    />
+
+                    <PrivateRoute
                       path="/questions/:id"
                       component={QuestionDetailsView}
+                      authedUser={didsignin}
                     />
+
+                    <Route path="/login" component={Login} />
                     <Route exact path="/logout" component={Logout} />
-                  </Fragment>
-                )}
-                <Route component={Expired} />
-              </Switch>
+                    <Route path="/" component={Expired} />
+                  </Switch>
+                </Fragment>
+              }
             </div>
           </div>
         </Fragment>

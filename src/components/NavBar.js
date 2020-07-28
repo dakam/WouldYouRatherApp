@@ -24,7 +24,7 @@ class NavBar extends Component {
                 <Nav.Link as={Link} to="/add">
                   New Question
                 </Nav.Link>
-                <Nav.Link as={Link} to="/leaderboardview">
+                <Nav.Link as={Link} to="/leaderboard">
                   Leader Board
                 </Nav.Link>
                 <NavItem>

@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 import { Button, Segment } from "semantic-ui-react";
 import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { userId: "" };
+    this.state = { userId: "", redirectToReferrer: false };
     this.handleSwitch = this.handleSwitch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,6 +21,7 @@ class Login extends Component {
     const { userId } = this.state;
     const { dispatch } = this.props;
     if (userId) {
+      this.setState({ redirectToReferrer: true });
       dispatch(setAuthedUser(userId));
     } else {
       alert("No User selected, Please select a User");
@@ -30,6 +32,13 @@ class Login extends Component {
   render() {
     const { users } = this.props;
     const { userId } = this.state;
+
+    const { from } = this.props.location.state || { from: { pathname: "/" } };
+    const { redirectToReferrer } = this.state;
+    console.log("from props", this.props);
+    if (redirectToReferrer === true) {
+      return <Redirect to={from} />;
+    }
     return (
       <Row>
         <Col sm="12" md={{ size: 6, offset: 3 }}>
@@ -68,7 +77,7 @@ class Login extends Component {
               </Input>
             </FormGroup>
             <Button
-              color="btn-primary"
+              color="facebook"
               disabled={userId === ""}
               fluid
               type="submit"

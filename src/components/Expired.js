@@ -13,7 +13,7 @@ const Expired = ({ history }) => (
         color="btn btn-danger"
         onClick={() => history.push("/")}
       >
-        Login
+        Home
       </Button>
     </CardBody>
   </Card>

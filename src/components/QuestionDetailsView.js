@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Segment } from "semantic-ui-react";
+import { Redirect } from "react-router-dom";
+import Expired from "./Expired";
 import {
   Card,
   CardHeader,
@@ -36,6 +38,9 @@ class QuestionDetailsView extends Component {
   render() {
     const { question, questionAuthor, answer, total, pOne, pTwo } = this.props;
     const { selectedOption } = this.state;
+    if (!question) {
+      return <Redirect to="/404" />;
+    }
 
     return (
       <Row>
@@ -138,6 +143,10 @@ function mapStateToProps({ questions, users, authedUser }, { match }) {
   let answer, pOne, pTwo, total;
   const { id } = match.params;
   const question = questions[id];
+  console.log("qn in map", id);
+  if (!question) {
+    return 1;
+  }
   if (answers.hasOwnProperty(question.id)) {
     answer = answers[question.id];
   }

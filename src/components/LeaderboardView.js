@@ -8,7 +8,7 @@ function Leaderboardview(props) {
   return (
     <Fragment>
       {users.map((user, index) => (
-        <Card className="lb-item">
+        <Card className="lb-item" key={index}>
           <Card.Content className="lb-item-content">
             <div>
               <Label attached="top left"> {index + 1}</Label>
